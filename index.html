@@ -3212,27 +3212,6 @@ function startReligionQuiz() {
     // الفتح بنظام التطبيق (عشان الزرار يشتغل)
     showPage('islamicQuizPage');
 }
-let currentAudio;
-
-function playSound(src) {
-  if (currentAudio) {
-    currentAudio.pause();
-    currentAudio.currentTime = 0;
-  }
-  currentAudio = new Audio(src);
-  currentAudio.play();
-}
-function goHome() {
-
-// وقف أي صوت شغال
-if (currentAudio) {
-  currentAudio.pause();
-  currentAudio.currentTime = 0;
-}
-
-// رجوع بالطريقة الأصلية بتاعتك
-showPage('homePage');
-}
 let currentAudio = null;
 
 function playSound(src) {
@@ -3240,6 +3219,7 @@ function playSound(src) {
     currentAudio.pause();
     currentAudio.currentTime = 0;
   }
+
   currentAudio = new Audio(src);
   currentAudio.play();
 }
@@ -3249,9 +3229,15 @@ function stopSound() {
     currentAudio.pause();
     currentAudio.currentTime = 0;
   }
-        }
+}
+
+function goHome() {
+  stopSound();
+  showPage('homePage');
+}
 </script>
 
 </body>
 </html>
+
 
