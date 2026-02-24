@@ -174,7 +174,6 @@
             <div class="menu-item" onclick="showPage('khatmaPage')" style="background-color: #fce4ec; color: #c2185b;">📖 <span>ختم القرآن</span></div>
             <div class="menu-item" onclick="showComfortMessage()" style="background: linear-gradient(135deg, #970bf5, #3e06d9); color: white;">✨ <span>رسالة لقلبك</span></div>
             
-            <div class="menu-item" onclick="showPage('relaxPage')" style="grid-column: span 2;  background: linear-gradient(135deg, #ff9800, #553be6); color: white;">📖 <span>الاسترخاء و التركيز</span></div>
 
 
             <div class="menu-item" onclick="showPage('faqPage')" style="background-color: #c9db25; color: #fffffe;">🌙 <span>فقه الصيام</span></div>
@@ -663,56 +662,6 @@
             <div id="q_answers" style="display:grid; gap:10px;"></div>
             <p id="q_msg" style="margin-top:15px; font-weight:bold;"></p>
         </div>
-    </div>
-</div>
-</div>
-<div id="relaxPage" class="page">
-
-    <button class="back-btn" onclick="goHome()">⬅ رجوع</button>
-
-    <h2 style="text-align:center; margin-bottom:20px;">
-      أصوات الطبيعة وموجات الألفا
-    </h2>
-  
-    <!-- النوم -->
-    <div class="menu-item" style="background:#1e293b; color:white;">
-      💤 النوم
-    </div>
-  
-    <div class="menu-item" onclick="playSound('https://files.catbox.moe/829mqe.mp3')">
-      ▶️ صوت 1
-    </div>
-  
-    <div class="menu-item" onclick="playSound('https://files.catbox.moe/b1s5ka.mp3')">
-      ▶️ صوت 2
-    </div>
-  
-    <!-- التركيز -->
-    <div class="menu-item" style="background:#1e293b; color:white;">
-      🎯 زيادة التركيز
-    </div>
-  
-    <div class="menu-item" onclick="playSound('https://files.catbox.moe/8bhyz6.mp3')">
-      ▶️ صوت 1
-    </div>
-  
-    <div class="menu-item" onclick="playSound('https://files.catbox.moe/o23sov.mp3')">
-      ▶️ صوت 2
-    </div>
-  
-    <!-- التوتر -->
-    <div class="menu-item" style="background:#1e293b; color:white;">
-      😌 تقليل التوتر
-    </div>
-  
-    <div class="menu-item" onclick="playSound('https://files.catbox.moe/dzyg5f.mp3')">
-      ▶️ صوت 1
-    </div>
-  
-    <div class="menu-item" onclick="playSound('https://files.catbox.moe/o23sov.mp3')">
-      ▶️ صوت 2
-    </div>
-  
   </div>
 </div>
 
@@ -3191,29 +3140,8 @@ function startReligionQuiz() {
     // الفتح بنظام التطبيق (عشان الزرار يشتغل)
     showPage('islamicQuizPage');
 }
-let currentAudio;
-
-function playSound(src) {
-  if (currentAudio) {
-    currentAudio.pause();
-    currentAudio.currentTime = 0;
-  }
-  currentAudio = new Audio(src);
-  currentAudio.play();
-}
-function goHome() {
-
-// وقف أي صوت شغال
-if (currentAudio) {
-  currentAudio.pause();
-  currentAudio.currentTime = 0;
-}
-
-// رجوع بالطريقة الأصلية بتاعتك
-showPage('homePage');
-}
-
 </script>
 
 </body>
 </html>
+
