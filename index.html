@@ -156,13 +156,15 @@
             <div class="menu-item" onclick="showPage('azkarEvening')" style="background-color: #efebe9; color: #5d4037;">🌇 <span>أذكار المساء</span></div>
             <div class="menu-item" onclick="showPage('tasbeehPage')" style="background-color: #d240e9; color: #0e110e;">📿 <span>السبحة</span></div>
             
+            <div class="menu-item" onclick="showPage('mushafPage'); openMushaf();"style="grid-column: span 2;  background: linear-gradient(135deg, #ff9800, #ed6c02); color: white;">📖 <span>المصحف</span></div>
+
+
             <div class="menu-item" onclick="showPage('duaPage')" style="background-color: #e1f5fe; color: #0288d1;">🙏 <span>الأدعية</span></div>
             
             <div class="menu-item" onclick="showPage('dreamsPage');" style="background-color: #b357f0; color: #0f0f0c;">
                 🌙 <span>تفسير الأحلام</span>
             </div>
 
-            <div class="menu-item" onclick="showPage('mushafPage'); openMushaf();"style="grid-column: span 2;  background: linear-gradient(135deg, #ff9800, #ed6c02); color: white;">📖 <span>المصحف</span></div>
             
             <div class="menu-item" onclick="getPrayerTimes()" style="background-color: #98fa29; color: #357c18;">🕌 <span>مواقيت الصلاة</span></div>
             <div class="menu-item" onclick="showPage('todoPage')" style="background-color: #8bec93; color: #2e7d32;">✅ <span>مهامي اليومية</span></div>
@@ -172,6 +174,9 @@
             <div class="menu-item" onclick="showPage('khatmaPage')" style="background-color: #fce4ec; color: #c2185b;">📖 <span>ختم القرآن</span></div>
             <div class="menu-item" onclick="showComfortMessage()" style="background: linear-gradient(135deg, #970bf5, #3e06d9); color: white;">✨ <span>رسالة لقلبك</span></div>
             
+            <div class="menu-item" onclick="showPage('relaxPage')" style="grid-column: span 2;  background: linear-gradient(135deg, #ff9800, #553be6); color: white;">📖 <span>الاسترخاء و التركيز</span></div>
+
+
             <div class="menu-item" onclick="showPage('faqPage')" style="background-color: #c9db25; color: #fffffe;">🌙 <span>فقه الصيام</span></div>
             <div class="menu-item" onclick="setupNotifications()" id="notiBtn" style="background-color: #dd7171; border: 1px solid rgb(236, 49, 49); color: #616161;">🔔 <span>التنبيهات</span></div>
             
@@ -661,6 +666,52 @@
     </div>
 </div>
 </div>
+<div id="relaxPage" class="page">
+
+    <h2 style="text-align:center; margin-bottom:20px;">
+      أصوات الطبيعة وموجات الألفا
+    </h2>
+  
+    <!-- النوم -->
+    <div class="menu-item" style="background:#1e293b; color:white;">
+      💤 النوم
+    </div>
+  
+    <div class="menu-item" onclick="playSound('sounds/sleep1.mp3')">
+      ▶️ صوت 1
+    </div>
+  
+    <div class="menu-item" onclick="playSound('sounds/sleep2.mp3')">
+      ▶️ صوت 2
+    </div>
+  
+    <!-- التركيز -->
+    <div class="menu-item" style="background:#1e293b; color:white;">
+      🎯 زيادة التركيز
+    </div>
+  
+    <div class="menu-item" onclick="playSound('sounds/focus1.mp3')">
+      ▶️ صوت 1
+    </div>
+  
+    <div class="menu-item" onclick="playSound('sounds/focus2.mp3')">
+      ▶️ صوت 2
+    </div>
+  
+    <!-- التوتر -->
+    <div class="menu-item" style="background:#1e293b; color:white;">
+      😌 تقليل التوتر
+    </div>
+  
+    <div class="menu-item" onclick="playSound('sounds/relax1.mp3')">
+      ▶️ صوت 1
+    </div>
+  
+    <div class="menu-item" onclick="playSound('sounds/relax2.mp3')">
+      ▶️ صوت 2
+    </div>
+  
+  </div>
 </div>
 
 <script>
@@ -3137,6 +3188,16 @@ function startReligionQuiz() {
 
     // الفتح بنظام التطبيق (عشان الزرار يشتغل)
     showPage('islamicQuizPage');
+}
+let currentAudio;
+
+function playSound(src) {
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+  }
+  currentAudio = new Audio(src);
+  currentAudio.play();
 }
 </script>
 
