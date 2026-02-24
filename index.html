@@ -668,6 +668,8 @@
 </div>
 <div id="relaxPage" class="page">
 
+    <button class="back-btn" onclick="goHome()">⬅ رجوع</button>
+
     <h2 style="text-align:center; margin-bottom:20px;">
       أصوات الطبيعة وموجات الألفا
     </h2>
@@ -677,11 +679,11 @@
       💤 النوم
     </div>
   
-    <div class="menu-item" onclick="playSound('sounds/sleep1.mp3')">
+    <div class="menu-item" onclick="playSound('https://files.catbox.moe/829mqe.mp3')">
       ▶️ صوت 1
     </div>
   
-    <div class="menu-item" onclick="playSound('sounds/sleep2.mp3')">
+    <div class="menu-item" onclick="playSound('https://files.catbox.moe/b1s5ka.mp3')">
       ▶️ صوت 2
     </div>
   
@@ -690,11 +692,11 @@
       🎯 زيادة التركيز
     </div>
   
-    <div class="menu-item" onclick="playSound('sounds/focus1.mp3')">
+    <div class="menu-item" onclick="playSound('')">
       ▶️ صوت 1
     </div>
   
-    <div class="menu-item" onclick="playSound('sounds/focus2.mp3')">
+    <div class="menu-item" onclick="playSound('')">
       ▶️ صوت 2
     </div>
   
@@ -703,11 +705,11 @@
       😌 تقليل التوتر
     </div>
   
-    <div class="menu-item" onclick="playSound('sounds/relax1.mp3')">
+    <div class="menu-item" onclick="playSound('')">
       ▶️ صوت 1
     </div>
   
-    <div class="menu-item" onclick="playSound('sounds/relax2.mp3')">
+    <div class="menu-item" onclick="playSound('')">
       ▶️ صوت 2
     </div>
   
@@ -3199,6 +3201,18 @@ function playSound(src) {
   currentAudio = new Audio(src);
   currentAudio.play();
 }
+function goHome() {
+
+// وقف أي صوت شغال
+if (currentAudio) {
+  currentAudio.pause();
+  currentAudio.currentTime = 0;
+}
+
+// رجوع بالطريقة الأصلية بتاعتك
+showPage('homePage');
+}
+
 </script>
 
 </body>
