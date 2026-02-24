@@ -116,25 +116,7 @@
 .tafsir-btn:hover {
     transform: scale(1.05);
 }
-        .hidden-section {
-  display: none;
-}
-
-.relax-box {
-  margin: 15px 0;
-  padding: 15px;
-  background: #1e1e2f;
-  border-radius: 15px;
-}
-
-.relax-box button {
-  margin: 5px;
-  padding: 8px 15px;
-  border-radius: 10px;
-}
     </style>
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#16a34a">
 </head>
 <body>
 
@@ -158,7 +140,7 @@
             <small id="tafsirText" style="display:none; font-size: 14px; opacity: 0.9;"></small>
         </div>
 
-                <div class="main-menu">
+        <div class="main-menu">
             <div class="menu-item" onclick="showPage('quranPage')" style="background-color: #e0f2f1; color: #00695c;">📖 <span>القرآن</span></div>
             
             <div class="menu-item" onclick="showPage('azkarMorning')" style="background-color: #fff8e1; color: #f57f17;">🌅 <span>أذكار الصباح</span></div>
@@ -174,15 +156,13 @@
             <div class="menu-item" onclick="showPage('azkarEvening')" style="background-color: #efebe9; color: #5d4037;">🌇 <span>أذكار المساء</span></div>
             <div class="menu-item" onclick="showPage('tasbeehPage')" style="background-color: #d240e9; color: #0e110e;">📿 <span>السبحة</span></div>
             
-            <div class="menu-item" onclick="showPage('mushafPage'); openMushaf();"style="grid-column: span 2;  background: linear-gradient(135deg, #ff9800, #ed6c02); color: white;">📖 <span>المصحف</span></div>
-
-
             <div class="menu-item" onclick="showPage('duaPage')" style="background-color: #e1f5fe; color: #0288d1;">🙏 <span>الأدعية</span></div>
             
             <div class="menu-item" onclick="showPage('dreamsPage');" style="background-color: #b357f0; color: #0f0f0c;">
                 🌙 <span>تفسير الأحلام</span>
             </div>
 
+            <div class="menu-item" onclick="showPage('mushafPage'); openMushaf();"style="grid-column: span 2;  background: linear-gradient(135deg, #ff9800, #ed6c02); color: white;">📖 <span>المصحف</span></div>
             
             <div class="menu-item" onclick="getPrayerTimes()" style="background-color: #98fa29; color: #357c18;">🕌 <span>مواقيت الصلاة</span></div>
             <div class="menu-item" onclick="showPage('todoPage')" style="background-color: #8bec93; color: #2e7d32;">✅ <span>مهامي اليومية</span></div>
@@ -192,9 +172,6 @@
             <div class="menu-item" onclick="showPage('khatmaPage')" style="background-color: #fce4ec; color: #c2185b;">📖 <span>ختم القرآن</span></div>
             <div class="menu-item" onclick="showComfortMessage()" style="background: linear-gradient(135deg, #970bf5, #3e06d9); color: white;">✨ <span>رسالة لقلبك</span></div>
             
-            <div class="menu-item" onclick="showRelaxSection()" style="grid-column: span 2;  background: linear-gradient(135deg, #b64fe6, #553be6); color: white;">📖 <span>الاسترخاء و التركيز</span></div>
-
-
             <div class="menu-item" onclick="showPage('faqPage')" style="background-color: #c9db25; color: #fffffe;">🌙 <span>فقه الصيام</span></div>
             <div class="menu-item" onclick="setupNotifications()" id="notiBtn" style="background-color: #dd7171; border: 1px solid rgb(236, 49, 49); color: #616161;">🔔 <span>التنبيهات</span></div>
             
@@ -683,29 +660,6 @@
         </div>
     </div>
 </div>
-</div>
-    <div id="relaxSection" class="hidden-section">
-
-  <h2>أصوات الطبيعة وموجات الألفا</h2>
-
-  <div class="relax-box">
-    <h3>💤 النوم</h3>
-    <button onclick="playSound('sounds/sleep1.mp3')">صوت 1</button>
-    <button onclick="playSound('sounds/sleep2.mp3')">صوت 2</button>
-  </div>
-
-  <div class="relax-box">
-    <h3>🎯 زيادة التركيز</h3>
-    <button onclick="playSound('sounds/focus1.mp3')">صوت 1</button>
-    <button onclick="playSound('sounds/focus2.mp3')">صوت 2</button>
-  </div>
-
-  <div class="relax-box">
-    <h3>😌 تقليل التوتر</h3>
-    <button onclick="playSound('sounds/relax1.mp3')">صوت 1</button>
-    <button onclick="playSound('sounds/relax2.mp3')">صوت 2</button>
-  </div>
-
 </div>
 </div>
 
@@ -3184,25 +3138,7 @@ function startReligionQuiz() {
     // الفتح بنظام التطبيق (عشان الزرار يشتغل)
     showPage('islamicQuizPage');
 }
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js');
-}
-    function showRelaxSection() {
-  document.getElementById("relaxSection").classList.toggle("hidden-section");
-}
-
-let currentAudio;
-
-function playSound(src) {
-  if (currentAudio) {
-    currentAudio.pause();
-  }
-  currentAudio = new Audio(src);
-  currentAudio.play();
-}
 </script>
 
 </body>
-
 </html>
-
