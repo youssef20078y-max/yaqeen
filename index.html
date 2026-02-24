@@ -668,73 +668,52 @@
 </div>
 <div id="relaxPage" class="page">
 
-    <!-- زرار رجوع -->
     <button class="back-btn" onclick="goHome()">⬅ رجوع</button>
 
-    <h2 style="text-align:center; margin:20px 0;">
-        🌿 أصوات الطبيعة وموجات الألفا
+    <h2 style="text-align:center; margin-bottom:20px;">
+      أصوات الطبيعة وموجات الألفا
     </h2>
-
-    <!-- 💤 قسم النوم -->
-    <div class="menu-item" style="background: linear-gradient(135deg,#0f766e,#115e59); color:white;">
-        💤 النوم العميق
+  
+    <!-- النوم -->
+    <div class="menu-item" style="background:#1e293b; color:white;">
+      💤 النوم
     </div>
-
-    <div class="menu-item">
-        🌙 نوم 1
-        <br><br>
-        <button onclick="playSound('https://files.catbox.moe/829mqe.mp3')">▶ تشغيل</button>
-        <button onclick="stopSound()">⏹ إيقاف</button>
+  
+    <div class="menu-item" onclick="playSound('https://files.catbox.moe/829mqe.mp3')">
+      ▶️ صوت 1
     </div>
-
-    <div class="menu-item">
-        🌙 نوم 2
-        <br><br>
-        <button onclick="playSound('https://files.catbox.moe/b1s5ka.mp3')">▶ تشغيل</button>
-        <button onclick="stopSound()">⏹ إيقاف</button>
+  
+    <div class="menu-item" onclick="playSound('https://files.catbox.moe/b1s5ka.mp3')">
+      ▶️ صوت 2
     </div>
-
-
-    <!-- 🎯 قسم التركيز -->
-    <div class="menu-item" style="background: linear-gradient(135deg,#1d4ed8,#1e40af); color:white;">
-        🎯 زيادة التركيز
+  
+    <!-- التركيز -->
+    <div class="menu-item" style="background:#1e293b; color:white;">
+      🎯 زيادة التركيز
     </div>
-
-    <div class="menu-item">
-        🧠 تركيز 1
-        <br><br>
-        <button onclick="playSound('https://files.catbox.moe/8bhyz6.mp3')">▶ تشغيل</button>
-        <button onclick="stopSound()">⏹ إيقاف</button>
+  
+    <div class="menu-item" onclick="playSound('https://files.catbox.moe/8bhyz6.mp3')">
+      ▶️ صوت 1
     </div>
-
-    <div class="menu-item">
-        🧠 تركيز 2
-        <br><br>
-        <button onclick="playSound('https://files.catbox.moe/dspapk.mp3')">▶ تشغيل</button>
-        <button onclick="stopSound()">⏹ إيقاف</button>
+  
+    <div class="menu-item" onclick="playSound('https://files.catbox.moe/o23sov.mp3')">
+      ▶️ صوت 2
     </div>
-
-
-    <!-- 😌 قسم الاسترخاء -->
-    <div class="menu-item" style="background: linear-gradient(135deg,#9333ea,#7e22ce); color:white;">
-        😌 تقليل التوتر
+  
+    <!-- التوتر -->
+    <div class="menu-item" style="background:#1e293b; color:white;">
+      😌 تقليل التوتر
     </div>
-
-    <div class="menu-item">
-        🌊 ريلاكس 1
-        <br><br>
-        <button onclick="playSound('https://files.catbox.moe/dzyg5f.mp3')">▶ تشغيل</button>
-        <button onclick="stopSound()">⏹ إيقاف</button>
+  
+    <div class="menu-item" onclick="playSound('https://files.catbox.moe/dzyg5f.mp3')">
+      ▶️ صوت 1
     </div>
-
-    <div class="menu-item">
-        🌊 ريلاكس 2
-        <br><br>
-        <button onclick="playSound('https://files.catbox.moe/o23sov.mp3')">▶ تشغيل</button>
-        <button onclick="stopSound()">⏹ إيقاف</button>
+  
+    <div class="menu-item" onclick="playSound('https://files.catbox.moe/o23sov.mp3')">
+      ▶️ صوت 2
     </div>
-
-</div>
+  
+  </div>
 </div>
 
 <script>
@@ -3212,32 +3191,29 @@ function startReligionQuiz() {
     // الفتح بنظام التطبيق (عشان الزرار يشتغل)
     showPage('islamicQuizPage');
 }
-let currentAudio = null;
+let currentAudio;
 
 function playSound(src) {
   if (currentAudio) {
     currentAudio.pause();
     currentAudio.currentTime = 0;
   }
-
   currentAudio = new Audio(src);
   currentAudio.play();
 }
-
-function stopSound() {
-  if (currentAudio) {
-    currentAudio.pause();
-    currentAudio.currentTime = 0;
-  }
-}
-
 function goHome() {
-  stopSound();
-  showPage('homePage');
+
+// وقف أي صوت شغال
+if (currentAudio) {
+  currentAudio.pause();
+  currentAudio.currentTime = 0;
 }
+
+// رجوع بالطريقة الأصلية بتاعتك
+showPage('homePage');
+}
+
 </script>
 
 </body>
 </html>
-
-
